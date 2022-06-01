@@ -14,8 +14,8 @@ namespace API.Entities
         public byte[] PasswordSalt { get; set; }
         public DateTime DateOfBirth {get; set;}
         public string KnownAs {get; set;}
-        public DateTime Created {get; set;}
-        public DateTime LastActive {get; set;}
+        public DateTime Created {get; set;} = DateTime.Now;
+        public DateTime LastActive {get; set;} = DateTime.Now;
         public string Gender {get; set;}
         public string Introduction {get; set;}
         public string LookingFor {get; set;}
@@ -24,8 +24,9 @@ namespace API.Entities
         public string Country {get; set;}
         // One-to-many relationship for photos (One user can have many photos)
         public ICollection<Photo> Photos {get; set;}
-        public int GetAge() {
-            return DateOfBirth.CalculateAge();
-        }
+        // public int GetAge() 
+        // {
+        //     return DateOfBirth.CalculateAge();
+        // }
     }
 }
